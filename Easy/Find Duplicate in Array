@@ -1,0 +1,16 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int repeatedNumber(final List<Integer> A) {
+    ArrayList<Integer> arr = new ArrayList<>(Collections.nCopies(Collections.max(A) + 1, 0));
+    for (int num : A) {
+            arr.set(num, arr.get(num) + 1);
+        }
+
+    int maxCount = Collections.max(arr);
+        
+    if (maxCount > 1) {
+       return arr.indexOf(maxCount);
+        }
+    else {return -1;}
+    }
+}
