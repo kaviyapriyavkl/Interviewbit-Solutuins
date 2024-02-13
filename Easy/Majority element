@@ -1,0 +1,28 @@
+public class Solution {
+    
+    public int majorityElement(final List<Integer> A) {
+     int n= A.size();
+     int c=1;
+    Collections.sort(A);
+     if(n==1)
+    {
+        return A.get(0);
+    }
+    for(int i=0; i<n-1; i++)
+    {
+        if((int)A.get(i) == (int)A.get(i+1))
+        {
+            c=c+1;  
+        }
+        else c=1;
+         
+         if(c > (n/2))
+         {
+             
+             return A.get(i);
+         }
+    }
+    return -1;
+        
+    }
+}
