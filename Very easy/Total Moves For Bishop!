@@ -1,0 +1,10 @@
+public class Solution {
+    public int solve(int A, int B) {
+        int topleft = Math.min(A,B)-1;
+        int topright = Math.min(A,9-B)-1;
+        int botleft = 8 - Math.max(A,9-B);
+        int botright = 8 - Math.max(A,B);
+        
+        return topleft + topright + botleft + botright;
+    }
+}
