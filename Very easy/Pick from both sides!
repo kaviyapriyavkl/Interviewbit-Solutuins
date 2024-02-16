@@ -1,0 +1,51 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A, int B) {
+        int n = A.size();
+        int sum = 0;
+
+        
+        for (int i = 0; i < B; i++) {
+            sum += A.get(i);
+        }
+
+        int max = sum;
+
+      
+        for (int i = 0; i < B; i++) {
+            sum = sum - A.get(B - 1 - i) + A.get(n - 1 - i);
+            max = Math.max(max, sum);
+        }
+
+        return max;
+    }
+}
+
+
+
+
+// public class Solution {
+//     public int solve(ArrayList<Integer> A, int B) {
+//     int sum=0;
+//     for(int i=0;i<B;i++){sum+=A.get(i);}
+//     int max=sum;
+//     while(B!=0)
+//     {
+//         int val=A.size()-1;
+//         int temp=A.get(val);
+//         for(int i=A.size()-2;i>=0;i--)
+//         {
+            
+//             A.set(i+1,A.get(i));
+//         }
+//         A.set(0,temp);
+//         max=Math.max(sum,max);
+//         sum=0;
+//         for(int i=0;i<B;i++){sum+=A.get(i);}
+//         B--;
+//     }
+   
+//     max=Math.max(sum,max);
+//     return max;
+//     }
+// }
+
