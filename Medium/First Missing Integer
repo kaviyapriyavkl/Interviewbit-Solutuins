@@ -1,0 +1,16 @@
+public class Solution {
+    public int firstMissingPositive(ArrayList<Integer> A) {
+        Collections.sort(A);
+         if(!A.contains(1) ){return 1;}
+         
+        for(int i=0;i<A.size()-1;i++)
+        {
+            if(A.get(i)<0){continue;}
+           
+            else if(A.get(i).equals(A.get(i+1)-1))
+            {continue;}
+            else{return A.get(i)+1;}
+        }
+        return A.get(A.size()-1)+1;
+    }
+}
