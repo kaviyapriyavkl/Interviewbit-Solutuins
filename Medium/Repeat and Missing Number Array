@@ -1,0 +1,23 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public ArrayList<Integer> repeatedNumber(final List<Integer> A) {
+        HashMap<Integer,Integer> map =new HashMap<>(); 
+        Collections.sort(A);
+        ArrayList <Integer> arr =new ArrayList<Integer>();
+        for(int i:A){
+            if(map.containsKey(i))
+            {
+                map.put(i,map.get(i)+1);
+            }
+            else{map.put(i,1);}
+            
+            if(map.get(i)>1){arr.add(i);}
+            
+        }
+        for(int i=1;i<=A.size();i++)
+        {
+            if(!map.containsKey(i)){arr.add(i);break;}
+        }
+        return arr;
+    }
+}
