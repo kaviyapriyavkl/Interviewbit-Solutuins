@@ -1,0 +1,28 @@
+import java.util.List;
+import java.util.Collections;
+
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int maxProfit(final List<Integer> A) {
+        if (A.size() < 2) {
+            return 0; 
+        }
+        
+        int minPrice = A.get(0); 
+        int maxProfit = 0; 
+        
+        
+        for (int i = 1; i < A.size(); i++) {
+            int currentPrice = A.get(i);
+            int currentProfit = currentPrice - minPrice;
+            
+            
+            maxProfit = Math.max(maxProfit, currentProfit);
+            
+            
+            minPrice = Math.min(minPrice, currentPrice);
+        }
+        
+        return maxProfit;
+    }
+}
