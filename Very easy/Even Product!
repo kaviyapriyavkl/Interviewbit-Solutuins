@@ -9,9 +9,6 @@ public class Solution {
       {
           count=count*2;
           count=count%(int)(1e9+7); 
-          
-      }
-    return (int)count-1;
-    
-    }
+        }
+    return (int)count-1;}
 }
